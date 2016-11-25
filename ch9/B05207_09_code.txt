@@ -1,0 +1,26 @@
+Installing
+val name = "Dan"val age = 37show(name + " is " + age)--------------------------
+Scala data access
+import scala.io.Source;//copied file locally https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.dataval filename = "iris.data"//println("SepalLength, SepalWidth, PetalLength, PetalWidth, Class");val array = scala.collection.mutable.ArrayBuffer.empty[Float]for (line <- Source.fromFile(filename).getLines) {    var cols = line.split(",").map(_.trim);    //println(s"${cols(0)}|${cols(1)}|${cols(2)}|${cols(3)} |${cols(4)}");    val i = cols(0).toFloat    array += i;}val count = array.length;var min:Double = 9999.0;var max:Double = 0.0;var total:Double = 0.0;for ( x <- array ) {    if (x < min) { min = x; }    if (x > max) { max = x; }    total += x;     }val mean:Double = total / count;--------------------------
+Scala array operations
+import scala.io.Source;val filename = "train.csv"//PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked//1,0,3,"Braund, Mr. Owen Harris",male,22,1,0,A/5 21171,7.25,,Svar males = 0var females = 0var males_survived = 0var females_survived = 0for (line <- Source.fromFile(filename).getLines) {    var cols = line.split(",").map(_.trim);    var sex = cols(5);    if (sex == "male") {         males = males + 1;        if (cols(1).toInt == 1) {            males_survived = males_survived + 1;        }    }    if (sex == "female") {         females = females + 1;         if (cols(1).toInt == 1) {            females_survived = females_survived + 1;        }    }    }val mens_survival_rate = males_survived.toFloat/males.toFloatval womens_survival_rate = females_survived.toFloat/females.toFloat-----------------------
+Scala random numbers
+val r = new scala.util.Randomr.setSeed(113L)val samples = 1000var dice = new Array[Int](12)for( i <- 1 to samples){    var total = r.nextInt(6) + r.nextInt(6)    dice(total) = dice(total) + 1}val max = dice.reduceLeft(_ max _)for( i <- 0 to 11) {    var str = ""    for( j <- 1 to dice(i)/3) {        str = str + "X"    }    print(i+1, str, "\n")}-----------------------
+Scala closures
+var factor = 7val multiplier = (i:Int) => i * factorval a = multiplier(11)val b = multiplier(12)------------------------
+Scala higher order functions
+def squared(x: Int): Int = x * xdef cubed(x: Int): Int = x * x * xdef process(a: Int, processor: Int => Int): Int = {processor(a) }val fiveSquared = process(5, squared)val sevenCubed = process(7, cubed)-------------------------
+Scala pattern matching
+def matchTest(x: Any): Any = x match {  case 7 => "seven"  case "two" => 2  case _ => "something"}val isItTwo = matchTest("two")val isItTest = matchTest("test")val isItSeven = matchTest(7)----------------------
+Scala case classes
+def carType(car: Car) = car match {  case Car("Honda", "Accord") => "sedan"  case Car("GM", "Denali") => "suv"  case Car("Mercedes", "300") => "luxury"  case Car("Buick", "LeSabre") => "sedan"  case _ => "Car: is of unknown type"}val typeOfBuick = carType(buickLeSabre)----------------------
+Scala immutability
+def calculate (amount: Int): Int = { amount = amount + 1; return amount; }
+
+var balance = 100
+val result = calculate(balance);
+----------------------
+Scala names arguments
+def divide(dividend:Int, divisor:Int): Float = { dividend.toFloat / divisor.toFloat }divide(40, 5)divide(divisor = 40, dividend = 5)----------------------
+Scala traits
+trait Color {    def isRed(): Boolean}class Red extends Color {    def isRed() = true}class Blue extends Color {    def isRed() = false}var red = new Red();var blue = new Blue();red.isRed()blue.isRed()

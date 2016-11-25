@@ -1,0 +1,3 @@
+#json
+
+var fords = require('/Users/dtoomey/fords.json');//display how many Ford models are in our data setconsole.log("There are " + fords.Models.length + " Ford models in the data set");//loop over the setvar index = 1for(var i=0; i<fords.Models.length; i++) {        //get this model    var model = fords.Models[i];        //pull it's name    var name = model.model_name;        //if the model name does not have numerics in it    if(! name.match(/[0-9]/i)) {        //display the model name        console.log("Model " + index + " is a " + name);        index++;    }        //only display the first 5    if (index>5) break;}

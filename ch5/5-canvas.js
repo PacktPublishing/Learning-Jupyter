@@ -1,0 +1,3 @@
+#canvas
+
+// create a canvas 200 by 200 pixelsvar Canvas = require('canvas')  , Image = Canvas.Image  , canvas = new Canvas(200, 200)  , ctx = canvas.getContext('2d')  , string = "Jupyter!";// place our string on the canvasctx.font = '30px Impact';ctx.rotate(.1);ctx.fillText(string, 50, 100); var te = ctx.measureText(string);ctx.strokeStyle = 'rgba(0,0,0,0.5)';ctx.beginPath();ctx.lineTo(50, 102);ctx.lineTo(50 + te.width, 102);ctx.stroke(); //create an html img tag, with embedded graphicsconsole.log('<img src="' + canvas.toDataURL() + '" />');

@@ -1,0 +1,3 @@
+#plotly
+
+//set random seedvar seedrandom = require('seedrandom');var rng = seedrandom('Jupyter');//setup plotlyvar plotly = require('plotly')(username="<username>", api_key="<key>")var x = [];for (var i = 0; i < 500; i ++) {    x[i] = Math.random();}require('plotly')(username, api_key);var data = [  {    x: x,    type: "histogram"  }];var graphOptions = {filename: "basic-histogram", fileopt: "overwrite"};plotly.plot(data, graphOptions, function (err, msg) {    console.log(msg);});

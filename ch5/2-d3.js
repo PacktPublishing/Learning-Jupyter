@@ -1,0 +1,2 @@
+# d3 package
+var fs = require("fs");var d3 = require("d3");var _ = require("lodash");//read in the animals filefs.readFile("data/animals.tsv", "utf8", function(error, data) {  	data = d3.tsv.parse(data);//display on screenconsole.log(JSON.stringify(data));	//compute the maximum weightvar maxWeight = d3.max(data, function(d) { return d.avg_weight; });//display the max on screenconsole.log(maxWeight);});
