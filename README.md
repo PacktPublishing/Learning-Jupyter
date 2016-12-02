@@ -3,7 +3,7 @@ This is the code repository for [Learning Jupyter](https://www.packtpub.com/big-
 ## About the Book
 Jupyter Notebook is a web-based environment that enables interactive computing in notebook documents. It allows you to create and share documents that contain live code, equations, visualizations, and explanatory text. The Jupyter Notebook system is extensively used in domains such as data cleaning and transformation, numerical simulation, statistical modeling, machine learning, and much more.
 ##Instructions and Navigations
-All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
+All of the code is organized into folders. For example, Chapter02.
 
 Julia works very differently in one environment vs another
 
