@@ -1,5 +1,5 @@
 #Learning Jupyter
-This is the code repository for [Learning Jupyter](https://www.packtpub.com/big-data-and-business-intelligence/learning-jupyter?utm_source=github&utm_medium=repository&utm_campaign=9781785884870), published by [Packt](www.packtpub.com). It contains all the supporting project files necessary to work through the book from start to finish.
+This is the code repository for [Learning Jupyter](https://www.packtpub.com/big-data-and-business-intelligence/learning-jupyter?utm_source=github&utm_medium=repository&utm_campaign=9781785884870), published by [Packt](https://www.packtpub.com/). It contains all the supporting project files necessary to work through the book from start to finish.
 ## About the Book
 Jupyter Notebook is a web-based environment that enables interactive computing in notebook documents. It allows you to create and share documents that contain live code, equations, visualizations, and explanatory text. The Jupyter Notebook system is extensively used in domains such as data cleaning and transformation, numerical simulation, statistical modeling, machine learning, and much more.
 ##Instructions and Navigations
